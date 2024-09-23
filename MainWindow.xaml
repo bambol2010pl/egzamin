@@ -1,0 +1,79 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="LightSteelBlue">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350px"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Dane pracownika"
+                  Margin="30"
+                  Grid.Column="0" FontSize="18" Grid.Row="0">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0">Imię</Label>
+                <TextBox Width="160" Height="30" HorizontalAlignment="Right" Grid.Row="0" x:Name="imie"></TextBox>
+
+                <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1">Nazwisko</Label>
+                <TextBox Width="160" Height="30" HorizontalAlignment="Right" Grid.Row="1" x:Name="nazwisko"></TextBox>
+
+                <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2">Stanowisko</Label>
+                <ComboBox Width="160" Height="30" HorizontalAlignment="Right" Grid.Row="2" x:Name="stanowisko">
+                    <ComboBoxItem>Kierownik</ComboBoxItem>
+                    <ComboBoxItem>Starszy programista</ComboBoxItem>
+                    <ComboBoxItem>Młodszy programista</ComboBoxItem>
+                    <ComboBoxItem>Tester</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Generowanie hasła"
+                  Margin="30"
+                  Grid.Column="1" 
+                  FontSize="18"
+                  Grid.Row="0">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0">Ile znaków?</Label>
+                <TextBox Width="160" Height="30" HorizontalAlignment="Right" Grid.Row="0" x:Name="iloscZnakow"></TextBox>
+
+                <CheckBox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="litery"/>
+                <Label Grid.Row="1" VerticalAlignment="Center" Margin="15 ,0, 0, 0" >Małe i wielkie litery</Label>
+
+                <CheckBox Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="cyfry"/>
+                <Label Grid.Row="2" VerticalAlignment="Center" Margin="15 ,0, 0, 0" >Cyfry</Label>
+
+                <CheckBox Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="znaki"/>
+                <Label Grid.Row="3" VerticalAlignment="Center" Margin="15 ,0, 0, 0" >Znaki specjalne</Label>
+
+                <Button Click="GenerujHaslo" Grid.Row="4" Width="150px" Height="30px" Background="SteelBlue" Foreground="White" FontSize="18px">Generuj hasło</Button>
+            </Grid>
+        </GroupBox>
+
+        <Button Click="Zatwierdz" Grid.Row="1" Grid.ColumnSpan="2" Width="150px" Height="30px" FontSize="18" Background="SteelBlue" Foreground="White" VerticalAlignment="Top" >Zatwierdź</Button>
+    </Grid>
+</Window>
